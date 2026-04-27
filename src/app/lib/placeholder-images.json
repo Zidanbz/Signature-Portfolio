@@ -1,0 +1,47 @@
+
+{
+  "placeholderImages": [
+    {
+      "id": "hero-bg",
+      "description": "Elegant professional workspace with a soft natural lighting",
+      "imageUrl": "https://picsum.photos/seed/elevate-hero/1920/1080",
+      "imageHint": "professional workspace"
+    },
+    {
+      "id": "about-me",
+      "description": "A warm, professional portrait of the individual",
+      "imageUrl": "https://picsum.photos/seed/elevate-about/800/1000",
+      "imageHint": "professional portrait"
+    },
+    {
+      "id": "project-fintech",
+      "description": "Modern financial dashboard UI design",
+      "imageUrl": "https://picsum.photos/seed/fintech/800/600",
+      "imageHint": "dashboard ui"
+    },
+    {
+      "id": "project-ecommerce",
+      "description": "Clean e-commerce mobile application interface",
+      "imageUrl": "https://picsum.photos/seed/ecommerce/800/600",
+      "imageHint": "mobile app"
+    },
+    {
+      "id": "project-healthcare",
+      "description": "Healthcare management portal web design",
+      "imageUrl": "https://picsum.photos/seed/healthcare/800/600",
+      "imageHint": "healthcare portal"
+    },
+    {
+      "id": "exp-logo-1",
+      "description": "Corporate headquarters or company logo placeholder",
+      "imageUrl": "https://picsum.photos/seed/office-1/400/400",
+      "imageHint": "office building"
+    },
+    {
+      "id": "cert-badge-1",
+      "description": "Professional certificate or educational badge",
+      "imageUrl": "https://picsum.photos/seed/certificate-1/400/300",
+      "imageHint": "professional certificate"
+    }
+  ]
+}
