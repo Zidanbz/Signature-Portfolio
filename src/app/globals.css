@@ -4,26 +4,26 @@
 
 @layer base {
   :root {
-    --background: 80 15% 90%; /* #E7E9E2 - Soft Creamy Beige */
-    --foreground: 75 26% 15%; /* Dark Olive Text */
-    --card: 80 15% 92%;
-    --card-foreground: 75 26% 15%;
-    --popover: 80 15% 90%;
-    --popover-foreground: 75 26% 15%;
-    --primary: 75 26% 30%; /* #566039 - Deep Olive Green */
+    --background: 80 15% 92%; /* #EAECE4 - Cleaner Soft Beige */
+    --foreground: 75 26% 12%; /* Darker Olive for better contrast */
+    --card: 80 15% 94%;
+    --card-foreground: 75 26% 12%;
+    --popover: 80 15% 92%;
+    --popover-foreground: 75 26% 12%;
+    --primary: 75 26% 25%; /* #454E2E - Deeper, richer Olive */
     --primary-foreground: 80 15% 98%;
-    --secondary: 45 40% 60%; /* #C2AD70 - Golden Olive */
-    --secondary-foreground: 75 26% 15%;
-    --muted: 80 10% 85%;
-    --muted-foreground: 75 10% 40%;
-    --accent: 45 40% 60%;
-    --accent-foreground: 75 26% 15%;
+    --secondary: 45 40% 55%; /* #BAA362 - Refined Golden Olive */
+    --secondary-foreground: 75 26% 12%;
+    --muted: 80 10% 88%;
+    --muted-foreground: 75 10% 35%;
+    --accent: 45 40% 55%;
+    --accent-foreground: 75 26% 12%;
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 98%;
-    --border: 75 10% 80%;
-    --input: 75 10% 80%;
-    --ring: 75 26% 30%;
-    --radius: 1rem;
+    --border: 75 10% 82%;
+    --input: 75 10% 82%;
+    --ring: 75 26% 25%;
+    --radius: 1.5rem;
   }
 }
 
@@ -33,6 +33,7 @@
   }
   body {
     @apply bg-background text-foreground;
+    font-feature-settings: "salt" on, "subs" on;
   }
 }
 
@@ -44,7 +45,7 @@
 .animate-marquee {
   display: flex;
   width: max-content;
-  animation: marquee 40s linear infinite;
+  animation: marquee 30s linear infinite;
 }
 
 .animate-marquee:hover {
@@ -61,4 +62,9 @@
 
 html {
   scroll-behavior: smooth;
+}
+
+.text-stroke-white {
+  -webkit-text-stroke: 1px rgba(255,255,255,0.2);
+  color: transparent;
 }

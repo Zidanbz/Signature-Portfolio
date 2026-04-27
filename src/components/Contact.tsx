@@ -1,72 +1,74 @@
-
 import { Profile } from "@/lib/fetchSheet";
 import { Mail, Linkedin, Instagram, Phone, ArrowUpRight } from "lucide-react";
 
 export default function Contact({ profile }: { profile: Profile }) {
   return (
-    <section id="contact" className="pt-32 pb-12 px-6 md:px-12 bg-primary text-white overflow-hidden relative">
+    <section id="contact" className="pt-40 pb-16 px-6 md:px-12 bg-primary text-white overflow-hidden relative">
       {/* Background Graphic Decoration */}
-      <div className="absolute bottom-0 left-0 w-full h-full opacity-5 pointer-events-none">
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 font-headline text-[30vw] font-black leading-none whitespace-nowrap">
-          LET&apos;S COLLABORATE
+      <div className="absolute inset-0 opacity-[0.03] pointer-events-none overflow-hidden">
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 font-headline text-[40vw] font-black leading-none whitespace-nowrap text-stroke-white italic rotate-[-10deg]">
+          CONNECT
         </div>
       </div>
 
       <div className="max-w-7xl mx-auto relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 lg:gap-32">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-24 lg:gap-40 items-center">
           
-          <div className="space-y-10">
-            <div className="space-y-6">
-              <h2 className="font-headline text-5xl md:text-8xl font-bold leading-[1.1] tracking-tight">
-                Mari bangun <br /> <span className="text-secondary">karya hebat</span> bersama.
+          <div className="space-y-14">
+            <div className="space-y-8">
+              <span className="text-secondary text-sm font-black uppercase tracking-[0.6em] inline-block animate-pulse">Get in touch</span>
+              <h2 className="font-headline text-7xl md:text-[10rem] font-black leading-[0.8] tracking-tighter">
+                Let&apos;s build <br /> <span className="text-secondary italic">impact</span> <br /> together.
               </h2>
-              <p className="text-white/70 text-xl md:text-2xl leading-relaxed max-w-xl font-body font-light">
-                Selalu terbuka untuk kolaborasi desain yang bermakna dan tantangan teknis yang menarik. Hubungi saya sekarang.
+              <p className="text-white/60 text-2xl md:text-3xl leading-relaxed max-w-xl font-body font-light italic">
+                I am always open to meaningful design collaborations and technical challenges that push boundaries.
               </p>
             </div>
             
             <a 
               href={`mailto:${profile.email}`}
-              className="inline-flex items-center gap-4 text-3xl md:text-5xl font-headline font-bold text-white hover:text-secondary transition-colors group border-b-2 border-white/20 pb-4"
+              className="inline-flex items-center gap-8 text-4xl md:text-6xl font-headline font-black text-white hover:text-secondary transition-all group relative"
             >
-              {profile.email}
-              <ArrowUpRight className="w-10 h-10 group-hover:translate-x-2 group-hover:-translate-y-2 transition-transform" />
+              <span className="relative z-10">{profile.email}</span>
+              <ArrowUpRight className="w-16 h-16 group-hover:translate-x-4 group-hover:-translate-y-4 transition-transform duration-500 text-secondary" />
+              <div className="absolute -bottom-4 left-0 w-0 h-1 bg-secondary group-hover:w-full transition-all duration-700" />
             </a>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 self-end">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
             <ContactLink 
-              icon={<Linkedin className="w-6 h-6" />} 
+              icon={<Linkedin className="w-8 h-8" />} 
               label="LinkedIn" 
-              value="Professional Profile" 
+              value="Professional Network" 
               href={profile.linkedin} 
             />
             <ContactLink 
-              icon={<Phone className="w-6 h-6" />} 
+              icon={<Phone className="w-8 h-8" />} 
               label="WhatsApp" 
-              value="Direct Chat" 
+              value="Direct Message" 
               href={profile.whatsapp} 
             />
             <ContactLink 
-              icon={<Instagram className="w-6 h-6" />} 
+              icon={<Instagram className="w-8 h-8" />} 
               label="Instagram" 
-              value="Personal Creative" 
+              value="Visual Feed" 
               href={profile.instagram} 
             />
             <ContactLink 
-              icon={<Mail className="w-6 h-6" />} 
-              label="Contact Form" 
-              value="Say Hello" 
+              icon={<Mail className="w-8 h-8" />} 
+              label="Email" 
+              value="Inquiry Box" 
               href={`mailto:${profile.email}`} 
             />
           </div>
         </div>
 
-        <div className="mt-40 pt-10 border-t border-white/10 flex flex-col md:flex-row items-center justify-between gap-8 text-white/40 font-body text-sm tracking-widest uppercase font-bold">
-          <p>&copy; {new Date().getFullYear()} {profile.name}. Elevate Folio Template.</p>
-          <div className="flex gap-10">
-            <a href="#" className="hover:text-white transition-colors">Syarat & Ketentuan</a>
-            <a href="#" className="hover:text-white transition-colors">Kebijakan Privasi</a>
+        <div className="mt-48 pt-12 border-t border-white/5 flex flex-col md:flex-row items-center justify-between gap-10 text-white/30 font-headline font-bold text-xs tracking-[0.4em] uppercase">
+          <p className="hover:text-white/60 transition-colors">&copy; {new Date().getFullYear()} {profile.name}. All Rights Reserved.</p>
+          <div className="flex gap-12">
+            <a href="#" className="hover:text-secondary transition-all">Terms</a>
+            <a href="#" className="hover:text-secondary transition-all">Privacy</a>
+            <a href="#" className="hover:text-secondary transition-all">Design System</a>
           </div>
         </div>
       </div>
@@ -79,17 +81,20 @@ function ContactLink({ icon, label, value, href }: { icon: React.ReactNode, labe
     <a 
       href={href} 
       target="_blank"
-      className="bg-white/5 hover:bg-white/10 p-8 rounded-[2rem] border border-white/10 transition-all group flex flex-col justify-between h-full hover:border-secondary/30"
+      className="bg-white/5 hover:bg-white p-12 rounded-[3.5rem] border border-white/10 transition-all duration-700 group flex flex-col justify-between h-72 hover:shadow-[0_40px_80px_-20px_rgba(0,0,0,0.5)] group overflow-hidden relative"
     >
-      <div className="flex items-center justify-between mb-8">
-        <div className="p-4 bg-secondary/20 rounded-2xl text-secondary group-hover:scale-110 transition-transform">
+      {/* Hover Background Blobs */}
+      <div className="absolute top-0 right-0 w-32 h-32 bg-secondary/20 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 group-hover:scale-[3] transition-transform duration-700" />
+      
+      <div className="flex items-center justify-between mb-8 relative z-10">
+        <div className="p-5 bg-secondary/20 rounded-[1.5rem] text-secondary group-hover:bg-primary group-hover:text-white transition-all duration-500 scale-110">
           {icon}
         </div>
-        <ArrowUpRight className="w-5 h-5 opacity-0 group-hover:opacity-100 transition-all translate-y-2 group-hover:translate-y-0" />
+        <ArrowUpRight className="w-6 h-6 text-white/20 group-hover:text-primary transition-all duration-500" />
       </div>
-      <div>
-        <span className="font-headline font-bold text-xl block text-white/90 group-hover:text-white">{label}</span>
-        <p className="text-white/40 group-hover:text-white/60 transition-colors mt-1 font-body text-sm font-bold uppercase tracking-wider">{value}</p>
+      <div className="relative z-10">
+        <span className="font-headline font-black text-3xl block text-white group-hover:text-primary transition-colors">{label}</span>
+        <p className="text-white/30 group-hover:text-primary/60 transition-colors mt-2 font-headline text-[10px] font-black uppercase tracking-[0.2em]">{value}</p>
       </div>
     </a>
   );
