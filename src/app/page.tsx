@@ -15,7 +15,7 @@ export default async function Home() {
     return (
       <div className="h-screen flex flex-col items-center justify-center bg-background gap-4">
         <div className="w-12 h-12 border-4 border-primary border-t-transparent rounded-full animate-spin" />
-        <p className="text-xl font-headline font-bold text-primary">Menyiapkan Portfolio...</p>
+        <p className="text-xl font-headline font-bold text-primary italic">Menyiapkan Signature Portfolio...</p>
       </div>
     );
   }

@@ -1,11 +1,10 @@
-
 import type {Metadata} from 'next';
 import './globals.css';
 import { Toaster } from "@/components/ui/toaster";
 
 export const metadata: Metadata = {
-  title: 'Elevate Folio | Professional Portfolio',
-  description: 'Modern portfolio generated from spreadsheet data.',
+  title: 'Signature Portfolio | Professional Showcase',
+  description: 'A modern, high-end professional portfolio curated for excellence.',
 };
 
 export default function RootLayout({
