@@ -1,5 +1,6 @@
 import { Experience } from "@/lib/fetchSheet";
 import Image from "next/image";
+import { resolveAssetPath } from "@/lib/asset-path";
 
 export default function ExperienceSection({ experiences }: { experiences: Experience[] }) {
   return (
@@ -27,7 +28,7 @@ export default function ExperienceSection({ experiences }: { experiences: Experi
               <div className="flex items-center gap-8 relative z-10">
                 <div className="relative w-28 h-28 rounded-[2.5rem] overflow-hidden border border-border/60 group-hover:border-secondary/40 transition-all duration-700 bg-white p-4 shadow-inner">
                   <Image
-                    src={exp.image_url}
+                    src={resolveAssetPath(exp.image, "https://picsum.photos/seed/experience-fallback/400/400")}
                     alt={exp.title}
                     fill
                     className="object-contain p-4 group-hover:scale-110 transition-transform duration-700"

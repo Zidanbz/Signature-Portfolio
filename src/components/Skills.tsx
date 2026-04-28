@@ -2,6 +2,7 @@
 
 import { Skill } from "@/lib/fetchSheet";
 import Image from "next/image";
+import { resolveAssetPath } from "@/lib/asset-path";
 
 export default function SkillsMarquee({ skills }: { skills: Skill[] }) {
   const doubleSkills = [...skills, ...skills, ...skills, ...skills];
@@ -24,7 +25,7 @@ export default function SkillsMarquee({ skills }: { skills: Skill[] }) {
             >
               <div className="relative w-20 h-20 transform transition-all duration-500 group-hover/item:scale-110 group-hover/item:-rotate-6">
                 <Image
-                  src={skill.logo_url}
+                  src={resolveAssetPath(skill.logo, "https://cdn.simpleicons.org/codeforces/566039")}
                   alt={skill.name}
                   fill
                   className="object-contain"

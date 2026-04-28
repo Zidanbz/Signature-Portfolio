@@ -1,9 +1,10 @@
 "use client";
 
 import { Project } from "@/lib/fetchSheet";
-import { useRef, useState } from "react";
+import { useRef } from "react";
 import Image from "next/image";
-import { ExternalLink, Github, ArrowRight, ArrowLeft } from "lucide-react";
+import { ExternalLink, Github, ArrowLeft, ArrowRight } from "lucide-react";
+import { resolveAssetPath } from "@/lib/asset-path";
 
 export default function Projects({ projects }: { projects: Project[] }) {
   const scrollRef = useRef<HTMLDivElement>(null);
@@ -57,7 +58,7 @@ export default function Projects({ projects }: { projects: Project[] }) {
           >
             <div className="relative h-80 md:h-[500px] w-full overflow-hidden">
               <Image
-                src={project.image_url}
+                src={resolveAssetPath(project.image, "https://picsum.photos/seed/project-fallback/800/600")}
                 alt={project.title}
                 fill
                 className="object-cover transition-transform duration-1000 group-hover:scale-105"

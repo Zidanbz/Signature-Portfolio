@@ -2,8 +2,9 @@
 
 import { Profile } from "@/lib/fetchSheet";
 import { Button } from "@/components/ui/button";
-import { ChevronDown, ArrowRight } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import Image from "next/image";
+import { resolveAssetPath } from "@/lib/asset-path";
 
 export default function Hero({ profile }: { profile: Profile }) {
   const scrollToAbout = () => {
@@ -15,7 +16,7 @@ export default function Hero({ profile }: { profile: Profile }) {
       {/* Background Image with optimized loading */}
       <div className="absolute inset-0 z-0 scale-110">
         <Image
-          src={profile.photo_url || "https://picsum.photos/seed/elevate-hero/1920/1080"}
+          src={resolveAssetPath(profile.photo, "https://picsum.photos/seed/elevate-hero/1920/1080")}
           alt="Hero Background"
           fill
           className="object-cover blur-[2px]"

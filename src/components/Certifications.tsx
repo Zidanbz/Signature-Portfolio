@@ -1,6 +1,7 @@
 
 import { Certification } from "@/lib/fetchSheet";
 import Image from "next/image";
+import { resolveAssetPath } from "@/lib/asset-path";
 
 export default function Certifications({ certifications }: { certifications: Certification[] }) {
   return (
@@ -21,7 +22,7 @@ export default function Certifications({ certifications }: { certifications: Cer
               <div className="relative h-64 w-full bg-white flex items-center justify-center p-8">
                 <div className="relative w-full h-full">
                   <Image
-                    src={cert.image_url}
+                    src={resolveAssetPath(cert.image, "https://picsum.photos/seed/certification-fallback/400/300")}
                     alt={cert.title}
                     fill
                     className="object-contain group-hover:scale-105 transition-transform duration-700"

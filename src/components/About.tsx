@@ -1,5 +1,6 @@
 import { Profile } from "@/lib/fetchSheet";
 import Image from "next/image";
+import { resolveAssetPath } from "@/lib/asset-path";
 
 export default function About({ profile }: { profile: Profile }) {
   return (
@@ -48,7 +49,7 @@ export default function About({ profile }: { profile: Profile }) {
               
               <div className="relative h-full w-full overflow-hidden rounded-[3.5rem] shadow-[0_48px_80px_-20px_rgba(0,0,0,0.15)] group">
                 <Image
-                  src={profile.photo_url}
+                  src={resolveAssetPath(profile.photo, "https://picsum.photos/seed/elevate-about/800/1000")}
                   alt={profile.name}
                   fill
                   className="object-cover scale-110 group-hover:scale-100 transition-transform duration-1000 ease-out"
